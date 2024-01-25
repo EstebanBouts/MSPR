@@ -5,17 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66f86e4b-12af-44cf-912d-b8c2a2d5e8eb" name="Changes" comment="fix du back">
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/JacksonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/service/PlanteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/faker_insertion.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/DataSeeder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Specialisation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/ConseilRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/ExperienceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/SessionsGardeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/SpecialisationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/UtilisateurRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/PlantesDb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/back/PlantesDb.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/back/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Botaniste.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Botaniste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Botaniste.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Experience.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Conseil.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Conseil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Plante.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Plante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/SessionsGarde.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/SessionsGarde.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Utilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/PlanteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/PlanteRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +32,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
-        <option value="com.haulmont.jpb.JpaRepository" />
         <option value="com.haulmont.jpb.JpaEntity" />
         <option value="Class" />
+        <option value="com.haulmont.jpb.JpaRepository" />
       </list>
     </option>
   </component>
@@ -88,7 +94,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.StartApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "dev-afio",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/EPSI/Projects/epsi-2023-2024/MSPR/back/src/main/java/com/epsi/mspr/entities",
     "node.js.detected.package.eslint": "true",
@@ -105,6 +111,10 @@
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "mariadb"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "GenericSQL",
+      "MariaDB"
     ]
   }
 }]]></component>
@@ -146,7 +156,7 @@
       <workItem from="1705500685279" duration="754000" />
       <workItem from="1705502381081" duration="9746000" />
       <workItem from="1705575252090" duration="2108000" />
-      <workItem from="1705584724969" duration="13604000" />
+      <workItem from="1705584724969" duration="21909000" />
     </task>
     <task id="LOCAL-00001" summary="ajout du back">
       <option name="closed" value="true" />

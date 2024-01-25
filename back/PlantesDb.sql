@@ -13,6 +13,7 @@ CREATE TABLE utilisateurs (
 
 -- Création de la Table Botanistes
 CREATE TABLE botanistes (
+                            id INT PRIMARY KEY AUTO_INCREMENT,
                             id_utilisateur INT,
                             specialisation VARCHAR(100),
                             annees_experience INT,
@@ -58,7 +59,7 @@ INSERT INTO utilisateurs (nom, email, mot_de_passe, type) VALUES
                                                               ('Bob Martin', 'bob@example.com', 'password123', 'Botaniste');
 
 -- Insertion dans la Table Botanistes
-INSERT INTO botanistes (id_utilisateur, specialisation, annees_experience) VALUES
+INSERT INTO botanistes (id,id_utilisateur, specialisation, annees_experience) VALUES
     (2, 'Botanique tropicale', 5);
 
 -- Insertion dans la Table Plantes

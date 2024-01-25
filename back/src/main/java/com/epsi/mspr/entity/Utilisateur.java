@@ -26,17 +26,13 @@ public class Utilisateur {
     @Column(name = "mot_de_passe")
     private String motDePasse;
 
-    @Lob
-    @Column(name = "type")
-    private String type;
-
     @OneToMany(mappedBy = "idUtilisateur")
-    private Set<Botaniste> botanistes = new LinkedHashSet<>();
+    private Set<Experience> experiences = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "idUtilisateur")
     private Set<Plante> plantes = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "idGardien")
+    @OneToMany(mappedBy = "idUtilisateur")
     private Set<SessionsGarde> sessionsGardes = new LinkedHashSet<>();
 
 }

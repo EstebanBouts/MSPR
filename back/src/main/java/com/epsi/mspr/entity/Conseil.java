@@ -19,11 +19,10 @@ public class Conseil {
     private String contenu;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_botaniste", referencedColumnName = "id_utilisateur")
-    private Botaniste idBotaniste;
+    @JoinColumn(name = "id_experience") // Assuming 'id_experience' is the correct column name
+    private Experience experience; // Changed from idUserExperience to experience
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_plante")
     private Plante idPlante;
-
 }

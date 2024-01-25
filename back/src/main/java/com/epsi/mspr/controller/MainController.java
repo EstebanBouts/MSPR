@@ -1,7 +1,8 @@
 package com.epsi.mspr.controller;
 
+import com.epsi.mspr.entity.Experience;
 import com.epsi.mspr.entity.Plante;
-import com.epsi.mspr.repository.PlanteRepository;
+import com.epsi.mspr.repository.ExperienceRepository;
 import com.epsi.mspr.service.PlanteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,17 +19,10 @@ public class MainController {
 
     @Autowired
     private PlanteService planteService;
+    @Autowired
+    private ExperienceRepository experienceRepository;
 
-    @GetMapping("/map")
-    public Map<String, String> getMap() {
-        Map<String, String> map = new HashMap<>();
-        map.put("key1", "value1");
-        map.put("key2", "value2");
-        map.put("key3", "value3");
-        return map;
-    }
-
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String index() {
         return "Hello World!";
     }
@@ -36,5 +30,10 @@ public class MainController {
     @GetMapping("/plantes")
     public List<Plante> getPlantes() {
         return planteService.getPlantes();
+    }
+
+    @GetMapping("/experiences")
+    public List<Experience> getExperiences() {
+        return experienceRepository.findAll();
     }
 }

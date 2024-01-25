@@ -9,20 +9,24 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "botanistes")
-public class Botaniste {
+@Table(name = "experiences")
+public class Experience {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Integer id; // Primary key
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_utilisateur")
-    private Utilisateur idUtilisateur;
+    private Utilisateur idUtilisateur; // Foreign key
 
-    @Column(name = "specialisation", length = 100)
-    private String specialisation;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "specialisation")
+    private Specialisation specialisation;
 
     @Column(name = "annees_experience")
     private Integer anneesExperience;
 
-    @OneToMany(mappedBy = "idBotaniste")
+    @OneToMany(mappedBy = "experience")
     private Set<Conseil> conseils = new LinkedHashSet<>();
-
 }

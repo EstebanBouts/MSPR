@@ -3,7 +3,7 @@ package com.epsi.mspr.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -21,17 +21,18 @@ public class SessionsGarde {
     private Plante idPlante;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_gardien")
-    private Utilisateur idGardien;
+    @JoinColumn(name = "id_utilisateur")
+    private Utilisateur idUtilisateur;
 
     @Column(name = "date_debut")
-    private LocalDate dateDebut;
+    private Date dateDebut;
 
     @Column(name = "date_fin")
-    private LocalDate dateFin;
+    private Date dateFin;
 
     @Lob
     @Column(name = "commentaires")
     private String commentaires;
+
 
 }
