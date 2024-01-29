@@ -1,5 +1,6 @@
 package com.epsi.mspr.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,11 +19,13 @@ public class Conseil {
     @Column(name = "contenu")
     private String contenu;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_experience") // Assuming 'id_experience' is the correct column name
     private Experience experience; // Changed from idUserExperience to experience
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_plante")
-    private Plante idPlante;
+    private Plante plante;
 }

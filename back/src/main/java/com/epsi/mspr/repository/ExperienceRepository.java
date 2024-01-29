@@ -10,5 +10,4 @@ import java.util.List;
 @Repository
 
 public interface ExperienceRepository extends JpaRepository<Experience, Integer> {
-    List<Experience> findByIdUtilisateur(Utilisateur idUtilisateur);
 }

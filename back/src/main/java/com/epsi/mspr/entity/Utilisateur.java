@@ -1,5 +1,6 @@
 package com.epsi.mspr.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,13 +27,16 @@ public class Utilisateur {
     @Column(name = "mot_de_passe")
     private String motDePasse;
 
-    @OneToMany(mappedBy = "idUtilisateur")
+    @JsonIgnore
+    @OneToMany(mappedBy = "utilisateur")
     private Set<Experience> experiences = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "idUtilisateur")
+    @JsonIgnore
+    @OneToMany(mappedBy = "utilisateur")
     private Set<Plante> plantes = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "idUtilisateur")
+    @JsonIgnore
+    @OneToMany(mappedBy = "utilisateur")
     private Set<SessionsGarde> sessionsGardes = new LinkedHashSet<>();
 
 }

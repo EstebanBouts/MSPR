@@ -18,11 +18,11 @@ public class SessionsGarde {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_plante")
-    private Plante idPlante;
+    private Plante plante;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_utilisateur")
-    private Utilisateur idUtilisateur;
+    private Utilisateur utilisateur;
 
     @Column(name = "date_debut")
     private Date dateDebut;

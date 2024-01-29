@@ -1,5 +1,6 @@
 package com.epsi.mspr.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,14 +28,15 @@ public class Plante {
     @Column(name = "instructions_soin")
     private String instructionsSoin;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_utilisateur")
-    private Utilisateur idUtilisateur;
-
-    @OneToMany(mappedBy = "idPlante")
+    private Utilisateur utilisateur;
+    @JsonIgnore
+    @OneToMany(mappedBy = "plante")
     private Set<Conseil> conseils = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "idPlante")
+    @JsonIgnore
+    @OneToMany(mappedBy = "plante")
     private Set<SessionsGarde> sessionsGardes = new LinkedHashSet<>();
 
 }
