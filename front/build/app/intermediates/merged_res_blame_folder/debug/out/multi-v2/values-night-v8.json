@@ -4,7 +4,7 @@
             "outputFile": "com.example.mae_projet.app-mergeDebugResources-9:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Esteban B-B\\Desktop\\Cours\\B3\\MSPR\\MSPR\\front\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\dev\\MSPR\\front\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

@@ -1,1 +1,0 @@
- C:\\Users\\Esteban\ B-B\\Desktop\\Cours\\B3\\MSPR\\MSPR\\front\\.dart_tool\\flutter_build\\9212815d25e9980012b1e8cecbd52dcb\\native_assets.yaml: 
