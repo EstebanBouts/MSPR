@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mae_projet/page/registrationPage.dart';
 import 'page/home_page.dart'; // Assurez-vous que le chemin d'accès est correct
 import 'page/signup_page.dart';
 import 'page/forgetmdp.dart';
+import 'page/registrationPage.dart';
+import 'page/registrationImage.dart';
 
 final _router = GoRouter(
   routes: [
@@ -17,6 +20,10 @@ final _router = GoRouter(
     GoRoute(
       path: '/forget',
       builder: (BuildContext context, GoRouterState state) => const ForgetMdp(),
+    ),
+    GoRoute(
+      path: '/registration',
+      builder: (BuildContext context, GoRouterState state) => const RegistrationPage(),
     ),
     // Vous pouvez ajouter d'autres routes ici si nécessaire
   ],
