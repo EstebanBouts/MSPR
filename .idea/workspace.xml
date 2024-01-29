@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66f86e4b-12af-44cf-912d-b8c2a2d5e8eb" name="Changes" comment="fix du back">
-      <change afterPath="$PROJECT_DIR$/back/faker_insertion.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/DataSeeder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Specialisation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/ConseilRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/ExperienceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/SessionsGardeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/SpecialisationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/repository/UtilisateurRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d0d5fa8-2c17-4db5-a018-6786297c114c.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d0d5fa8-2c17-4db5-a018-6786297c114c/storage_v2/_src_/schema/bywhjmkcgb8gcfhur6rh.9zUMew.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d0d5fa8-2c17-4db5-a018-6786297c114c/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f09c8473-5b28-4193-a530-d5dfd4b7b4da.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f09c8473-5b28-4193-a530-d5dfd4b7b4da.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/PlantesDb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/back/PlantesDb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/back/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Botaniste.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Experience.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Conseil.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Conseil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/SessionsGarde.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/SessionsGarde.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/epsi/mspr/entity/Utilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/faker_insertion.sql" beforeDir="false" afterPath="$PROJECT_DIR$/back/faker_insertion.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,17 +30,17 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="e94e058a4a2f2ea5f5ac1eac4b5268b30d0f6e68" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Potowai"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Potowai&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -77,47 +66,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.MSPR [clean].executor": "Run",
-    "Maven.MSPR [compile].executor": "Run",
-    "Maven.MSPR [install].executor": "Run",
-    "Maven.MSPR [package].executor": "Run",
-    "Maven.demo [clean].executor": "Run",
-    "Maven.demo [package].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.StartApplication.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev-afio",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/EPSI/Projects/epsi-2023-2024/MSPR/back/src/main/java/com/epsi/mspr/entities",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.MSPR [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.MSPR [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.MSPR [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.MSPR [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.demo [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.StartApplication.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-afio&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/EPSI/Projects/epsi-2023-2024/MSPR/back/src/main/java/com/epsi/mspr/entities&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
-      "GenericSQL",
-      "MariaDB"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;GenericSQL&quot;,
+      &quot;MariaDB&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\EPSI\Projects\epsi-2023-2024\MSPR\back\src\main\java\com\epsi\mspr\entities" />
