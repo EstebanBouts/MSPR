@@ -125,6 +125,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               onPressed: _takePicture,
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green[700],
+                foregroundColor: Colors.white,
                 minimumSize: const Size.fromHeight(50),
               ),
               child: const Text('Prendre une photo'),

@@ -64,6 +64,7 @@ class _RegistrationImagePageState extends State<RegistrationImagePage> {
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
+                foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               ),
               child: const Text('Valider sa demande'),

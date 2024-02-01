@@ -26,8 +26,12 @@ class MapPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(title: Text('Flutter Map')),
-      backgroundColor: Colors.green,
+      appBar: AppBar(
+        title: const Text('Arosa-Te'),
+        centerTitle: true,
+        backgroundColor: Colors.green[800],
+      ),
+      backgroundColor: Colors.green[500],
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -50,13 +54,14 @@ class MapPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 60),
           ElevatedButton(
             onPressed: () {
               GoRouter.of(context).go('/registration');
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.green[700],
+              foregroundColor: Colors.white, // Définit la couleur du texte du bouton
               minimumSize: const Size.fromHeight(50),
             ),
             child: const Text('Créer une demande de garde'),
@@ -66,6 +71,7 @@ class MapPage extends StatelessWidget {
             onPressed: () {},
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.green[700],
+              foregroundColor: Colors.white,
               minimumSize: const Size.fromHeight(50),
             ),
             child: const Text('Demander conseil'),
