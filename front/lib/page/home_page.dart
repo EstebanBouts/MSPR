@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
-                // Ajoutez votre logique de connexion ici
+                GoRouter.of(context).go('/map');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green[700],
