@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
-                GoRouter.of(context).go('/registration');
+                GoRouter.of(context).go('/map');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green[700],

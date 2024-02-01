@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mae_projet/page/registrationImage.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -89,6 +90,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            GoRouter.of(context).go('/map');
+          },
+        ),
         title: const Text('Arosa-Te'),
         centerTitle: true,
         backgroundColor: Colors.green[800],
@@ -123,12 +130,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
               child: const Text('Prendre une photo'),
             ),
             const SizedBox(height: 20),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('Retour'),
-            ),
           ],
         ),
       ),

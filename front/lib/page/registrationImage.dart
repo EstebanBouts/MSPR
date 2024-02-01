@@ -37,6 +37,16 @@ class _RegistrationImagePageState extends State<RegistrationImagePage> {
                 ),
               ),
             ),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Localisation',
+                filled: true,
+                fillColor: Colors.white,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+              ),
+            ),
             const SizedBox(height: 20),
             // Affichage de la photo prise
             Expanded(
@@ -49,15 +59,6 @@ class _RegistrationImagePageState extends State<RegistrationImagePage> {
                 child: Image.file(File(widget.imagePath), fit: BoxFit.cover), // Affichage de l'image
               ),
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                primary: Colors.green,
-                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              ),
-              child: const Text('Demander conseil'),
-            ),
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {},
@@ -65,13 +66,9 @@ class _RegistrationImagePageState extends State<RegistrationImagePage> {
                 primary: Colors.green,
                 padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               ),
-              child: const Text('Faire garder sa plante'),
+              child: const Text('Valider sa demande'),
             ),
             const SizedBox(height: 20),
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Déconnexion'),
-            ),
           ],
         ),
       ),

@@ -1,4 +1,4 @@
-#Mon Jan 29 15:52:09 CET 2024
+#Thu Feb 01 10:45:16 CET 2024
 base.0=C\:\\Users\\Esteban B-B\\Desktop\\Cours\\B3\\MSPR\\MSPR\\front\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\Esteban B-B\\Desktop\\Cours\\B3\\MSPR\\MSPR\\front\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\Esteban B-B\\Desktop\\Cours\\B3\\MSPR\\MSPR\\front\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
