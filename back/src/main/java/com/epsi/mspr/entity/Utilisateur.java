@@ -4,15 +4,17 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "utilisateurs")
-public class Utilisateur {
+public class Utilisateur implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -27,15 +29,12 @@ public class Utilisateur {
     @Column(name = "mot_de_passe")
     private String motDePasse;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "utilisateur")
     private Set<Experience> experiences = new LinkedHashSet<>();
 
-    @JsonIgnore
     @OneToMany(mappedBy = "utilisateur")
     private Set<Plante> plantes = new LinkedHashSet<>();
 
-    @JsonIgnore
     @OneToMany(mappedBy = "utilisateur")
     private Set<SessionsGarde> sessionsGardes = new LinkedHashSet<>();
 
