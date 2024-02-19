@@ -1,5 +1,6 @@
 package com.epsi.mspr.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,13 +30,16 @@ public class Plante implements Serializable {
     @Column(name = "instructions_soin")
     private String instructionsSoin;
 
+    @JsonIgnore // Prevents the 'utilisateur' from being serialized
     @ManyToOne()
     @JoinColumn(name = "id_utilisateur")
     private Utilisateur utilisateur;
 
+    @JsonIgnore // Prevents the 'conseils' collection from being serialized
     @OneToMany(mappedBy = "plante")
     private Set<Conseil> conseils = new HashSet<>();
 
+    @JsonIgnore // Prevents the 'sessionsGardes' collection from being serialized
     @OneToMany(mappedBy = "plante")
     private Set<SessionsGarde> sessionsGardes = new HashSet<>();
 

@@ -22,10 +22,12 @@ public class Conseil implements Serializable {
     @Column(name = "contenu")
     private String contenu;
 
+    @JsonIgnore // To ignore the 'experience' association during serialization
     @ManyToOne()
     @JoinColumn(name = "id_experience") // Assuming 'id_experience' is the correct column name
     private Experience experience; // Changed from idUserExperience to experience
 
+    @JsonIgnore // To ignore the 'plante' association during serialization
     @ManyToOne()
     @JoinColumn(name = "id_plante")
     private Plante plante;

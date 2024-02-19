@@ -1,5 +1,6 @@
 package com.epsi.mspr.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,10 +19,12 @@ public class SessionsGarde implements Serializable {
     @Column(name = "id_session", nullable = false)
     private Integer id;
 
+    @JsonIgnore // Prevents the lazy-loaded 'plante' from being serialized
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_plante")
     private Plante plante;
 
+    @JsonIgnore // Prevents the lazy-loaded 'utilisateur' from being serialized
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_utilisateur")
     private Utilisateur utilisateur;
@@ -35,6 +38,5 @@ public class SessionsGarde implements Serializable {
     @Lob
     @Column(name = "commentaires")
     private String commentaires;
-
 
 }
