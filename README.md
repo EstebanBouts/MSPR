@@ -41,6 +41,11 @@ Aller sur votre répertoire d'installation de Flutter à ce chemin : flutter\pac
 
 Pour lancer le projet, il faut run le fichier "main.dart" qui se trouve dans front/lib/main.dart. Vous avez également besoin d'un device android pour lancer l'application. Personnellement, nous utilisons le "Pixel 7 Pro API 26".
 
+Une fois l'application lancée, vous devriez arriver directement sur la page de connexion.
+Pour tester, voici des identifiants de test :
+- login : alice@example.com
+- mdp : password123
+
 ## Contribution <a name = "contribution"></a>
 
 Esteban BOUTS-BONHOMME
