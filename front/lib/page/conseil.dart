@@ -114,7 +114,7 @@ class _ConseilPageState extends State<ConseilPage> {
           },
         ),
         title: const Text('Arosa-Je'),
-        centerTitle: true,  
+        centerTitle: true,
         backgroundColor: Colors.green[800],
       ),
       backgroundColor: Colors.green[100],

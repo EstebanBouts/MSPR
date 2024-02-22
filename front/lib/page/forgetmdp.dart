@@ -8,6 +8,12 @@ class ForgetMdp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            GoRouter.of(context).go('/');
+          },
+        ),
         title: const Text('Arosa-Je'),
         centerTitle: true,
         backgroundColor: Colors.green[800],
@@ -18,9 +24,16 @@ class ForgetMdp extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             const SizedBox(height: 40),
+            TextFormField(
+              decoration: const InputDecoration(
+                icon: Icon(Icons.email),
+                labelText: 'Adresse mail',
+              ),
+            ),
+            const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
-                GoRouter.of(context).go('/homepage');
+                GoRouter.of(context).go('/');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green[700],

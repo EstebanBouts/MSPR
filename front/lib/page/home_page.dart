@@ -124,7 +124,7 @@ class HomePage extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                GoRouter.of(context).go('/map');
+                GoRouter.of(context).go('/forget');
               },
               child: const Text('Mot de passe oublié ?'),
             ),
