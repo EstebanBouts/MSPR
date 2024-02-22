@@ -8,7 +8,7 @@ class ForgetMdp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Arosa-Te'),
+        title: const Text('Arosa-Je'),
         centerTitle: true,
         backgroundColor: Colors.green[800],
       ),
@@ -17,19 +17,6 @@ class ForgetMdp extends StatelessWidget {
         color: Colors.green[100],
         child: ListView(
           children: <Widget>[
-            const SizedBox(height: 20),
-            const Text(
-              'Saisissez votre E-MAIL',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 60),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.email),
-                labelText: 'Email',
-              ),
-            ),
             const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {

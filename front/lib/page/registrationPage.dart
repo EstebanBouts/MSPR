@@ -96,7 +96,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
             GoRouter.of(context).go('/map');
           },
         ),
-        title: const Text('Arosa-Te'),
+        title: const Text('Arosa-Je'),
         centerTitle: true,
         backgroundColor: Colors.green[800],
       ),

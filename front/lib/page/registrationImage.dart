@@ -1,23 +1,61 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class RegistrationImagePage extends StatefulWidget {
   final String imagePath;
 
-  const RegistrationImagePage({Key? key, required this.imagePath}) : super(key: key);
+  const RegistrationImagePage({Key? key, required this.imagePath})
+      : super(key: key);
 
   @override
   _RegistrationImagePageState createState() => _RegistrationImagePageState();
 }
 
 class _RegistrationImagePageState extends State<RegistrationImagePage> {
+  late Future<List<String>> _plantNames;
+  late TextEditingController _searchController;
+  List<String> _filteredPlantNames = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _plantNames = _fetchPlantNames();
+    _searchController = TextEditingController();
+  }
+
+  Future<List<String>> _fetchPlantNames() async {
+    final response = await http.get(Uri.parse('http://10.0.2.2:8080/api/v1/plantes'));
+
+    if (response.statusCode == 200) {
+      final Map<String, dynamic> data = jsonDecode(response.body);
+      final List<dynamic> plantes = data['_embedded']['plantes'];
+      final List<String> plantNames = plantes.map((plante) => plante['nom'] as String).toList();
+      return plantNames;
+    } else {
+      throw Exception('Failed to load plant names');
+    }
+  }
+
+  void _filterPlantNames(String query) async {
+    final List<String> allPlantNames = await _plantNames;
+    setState(() {
+      if (query.isEmpty) {
+        _filteredPlantNames = allPlantNames;
+      } else {
+        _filteredPlantNames = allPlantNames.where((name) => name.toLowerCase().contains(query.toLowerCase())).toList();
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Arosa-Te'),
+        title: const Text('Arosa-Je'),
         centerTitle: true,
         backgroundColor: Colors.green[800],
       ),
@@ -27,36 +65,51 @@ class _RegistrationImagePageState extends State<RegistrationImagePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Nom de la variété',
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: _searchController,
+                    onChanged: (value) {
+                      _filterPlantNames(value);
+                    },
+                    decoration: InputDecoration(
+                      labelText: 'Rechercher le nom de la plante',
+                      filled: true,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Localisation',
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
+                PopupMenuButton<String>(
+                  icon: Icon(Icons.arrow_drop_down),
+                  itemBuilder: (BuildContext context) {
+                    return _filteredPlantNames.map((String plantName) {
+                      return PopupMenuItem<String>(
+                        value: plantName,
+                        child: Text(plantName),
+                      );
+                    }).toList();
+                  },
+                  onSelected: (String? value) {
+                    setState(() {
+                      _searchController.text = value!;
+                    });
+                  },
                 ),
-              ),
+              ],
             ),
             const SizedBox(height: 20),
             // Affichage de la photo prise
             Expanded(
               child: Container(
-                margin: const EdgeInsets.all(8), // Marge extérieure pour le cadre
-                // La photo doit occuper tout l'espace disponible
+                margin: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Colors.white, // Couleur de fond pour le cadre
+                  color: Colors.white,
                 ),
-                child: Image.file(File(widget.imagePath), fit: BoxFit.cover), // Affichage de l'image
+                child: Image.file(File(widget.imagePath), fit: BoxFit.cover),
               ),
             ),
             const SizedBox(height: 10),
@@ -65,7 +118,8 @@ class _RegistrationImagePageState extends State<RegistrationImagePage> {
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
                 foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                padding:
+                const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               ),
               child: const Text('Valider sa demande'),
             ),
@@ -76,4 +130,3 @@ class _RegistrationImagePageState extends State<RegistrationImagePage> {
     );
   }
 }
-

@@ -8,7 +8,7 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Arosa-Te'),
+        title: const Text('Arosa-Je'),
         centerTitle: true,
         backgroundColor: Colors.green[800],
       ),
@@ -35,6 +35,20 @@ class SignUpPage extends StatelessWidget {
               decoration: const InputDecoration(
                 icon: Icon(Icons.person),
                 labelText: 'Votre prénom',
+              ),
+            ),
+            const SizedBox(height: 20),
+            TextFormField(
+              decoration: const InputDecoration(
+                icon: Icon(Icons.person),
+                labelText: 'Localisation',
+              ),
+            ),
+            const SizedBox(height: 20),
+            TextFormField(
+              decoration: const InputDecoration(
+                icon: Icon(Icons.person),
+                labelText: 'Indiquez si vous êtes : Botaniste / Utilisateur',
               ),
             ),
             const SizedBox(height: 20),
