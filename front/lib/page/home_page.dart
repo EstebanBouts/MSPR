@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
@@ -8,34 +7,35 @@ class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   Future<void> _submitForm(String email, String password, BuildContext context) async {
-    final url = Uri.parse('http://10.0.2.2:8080/api/v1/utilisateurs/search/findByEmail?email=$email');
+    final url = Uri.parse('http://10.0.2.2:8080/login');
 
     try {
-      final response = await http.get(url);
+      // Envoyer une requête POST au serveur avec email et mot de passe
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({'email': email, 'motDePasse': password}),
+      );
 
+      // Vérifier le statut de la réponse
       if (response.statusCode == 200) {
-        // Si la réponse est réussie, vous pouvez vérifier si le mot de passe est correct
-        // À des fins de démonstration, je suppose que le serveur renvoie un objet JSON contenant un champ 'motDePasse'
+        // Vérifier la réponse du serveur. Dans votre cas, on suppose que le serveur renvoie true pour une authentification réussie.
         final responseData = json.decode(response.body);
-        final correctPassword = responseData['motDePasse'];
-
-        if (password == correctPassword) {
-          // Mot de passe correct, naviguez vers la page suivante
+        if (responseData == true) {
+          // Authentification réussie, naviguer vers la page suivante
           GoRouter.of(context).go('/map');
         } else {
-          // Mot de passe incorrect
+          // Authentification échouée, afficher un message d'erreur
           showDialog(
             context: context,
             builder: (context) {
               return AlertDialog(
-                title: Text('Erreur'),
-                content: Text('Mot de passe incorrect'),
-                actions: [
+                title: const Text('Erreur'),
+                content: const Text('Email ou mot de passe incorrect'),
+                actions: <Widget>[
                   TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('OK'),
+                    onPressed: () => Navigator.of(context).pop(),
+                    child: const Text('OK'),
                   ),
                 ],
               );
@@ -43,24 +43,35 @@ class HomePage extends StatelessWidget {
           );
         }
       } else {
-        // Échec de la requête HTTP
-        throw Exception('Failed to load data');
+        // Gérer les erreurs de réponse autres que 200
+        showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text('Erreur'),
+              content: Text('Erreur de connexion: ${response.body}'),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
       }
     } catch (error) {
-      // Gérer les erreurs
-      print('Error: $error');
+      // Gérer les exceptions de la requête
       showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('Erreur'),
-            content: Text('Une erreur s\'est produite. Veuillez réessayer.'),
-            actions: [
+            title: const Text('Erreur'),
+            content: Text('Une erreur s\'est produite. Veuillez réessayer. $error'),
+            actions: <Widget>[
               TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: Text('OK'),
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text('OK'),
               ),
             ],
           );
@@ -113,9 +124,7 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             ElevatedButton(
-              onPressed: () {
-                _submitForm(email, password, context);
-              },
+              onPressed: () => _submitForm(email, password, context),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green[700],
                 minimumSize: const Size.fromHeight(50),
@@ -123,16 +132,12 @@ class HomePage extends StatelessWidget {
               child: const Text('Se connecter'),
             ),
             TextButton(
-              onPressed: () {
-                GoRouter.of(context).go('/forget');
-              },
+              onPressed: () => GoRouter.of(context).go('/forget'),
               child: const Text('Mot de passe oublié ?'),
             ),
             const Divider(color: Colors.black),
             TextButton(
-              onPressed: () {
-                GoRouter.of(context).go('/signup'); // Naviguer vers la page d'inscription
-              },
+              onPressed: () => GoRouter.of(context).go('/signup'), // Naviguer vers la page d'inscription
               child: const Text('Créer un compte'),
             ),
           ],
