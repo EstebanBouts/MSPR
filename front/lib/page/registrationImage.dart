@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
 
 class RegistrationImagePage extends StatefulWidget {
@@ -49,6 +49,23 @@ class _RegistrationImagePageState extends State<RegistrationImagePage> {
         _filteredPlantNames = allPlantNames.where((name) => name.toLowerCase().contains(query.toLowerCase())).toList();
       }
     });
+  }
+
+  Future<void> _sendImageToServer(String imagePath) async {
+    var uri = Uri.parse('http://10.0.2.2:8080/image'); // Remplacez par l'URL de votre serveur
+    var request = http.MultipartRequest('POST', uri)
+      ..files.add(await http.MultipartFile.fromPath('image', imagePath));
+
+    var response = await request.send();
+
+    if (response.statusCode == 200) {
+      print('Image envoyée avec succès');
+    } else {
+      response.stream.transform(utf8.decoder).listen((value) {
+        print(value); // Pour afficher l'erreur retournée par le serveur
+      });
+      print('Échec de l\'envoi de l\'image');
+    }
   }
 
   @override
@@ -114,12 +131,14 @@ class _RegistrationImagePageState extends State<RegistrationImagePage> {
             ),
             const SizedBox(height: 10),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                _sendImageToServer(widget.imagePath); // Ajout de cette ligne pour envoyer l'image
+                GoRouter.of(context).go('/map');
+              },
               style: ElevatedButton.styleFrom(
-                primary: Colors.green,
+                backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
-                padding:
-                const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               ),
               child: const Text('Valider sa demande'),
             ),

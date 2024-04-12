@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:flutter/widgets.dart';
 
-
 class MapPage extends StatelessWidget {
   const MapPage({Key? key}) : super(key: key);
 
@@ -51,6 +50,17 @@ class MapPage extends StatelessWidget {
               MarkerLayer(markers: markers),
             ],
             children: [],
+          ),
+          Positioned(
+            top: 20.0, // Ajoutez une marge pour ne pas chevaucher l'AppBar
+            left: 20.0,
+            child: FloatingActionButton(
+              onPressed: () {
+                GoRouter.of(context).go('/chat');
+              },
+              child: Icon(Icons.chat),
+              backgroundColor: Colors.green[700],
+            ),
           ),
           Positioned(
             bottom: 20.0,

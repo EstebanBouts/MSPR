@@ -8,6 +8,8 @@ import 'page/forgetmdp.dart';
 import 'page/registrationPage.dart';
 import 'page/registrationImage.dart';
 import 'page/conseil.dart';
+import 'page/chat.dart';
+
 
 final _router = GoRouter(
   routes: [
@@ -34,6 +36,10 @@ final _router = GoRouter(
     GoRoute(
       path: '/conseil',
       builder: (BuildContext context, GoRouterState state) => const ConseilPage(),
+    ),
+    GoRoute(
+      path: '/chat',
+      builder: (BuildContext context, GoRouterState state) => const Chat(),
     ),
   ],
 );
