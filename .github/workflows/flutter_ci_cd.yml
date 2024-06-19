@@ -17,3 +17,24 @@ jobs:
     - run: flutter pub get
     - run: flutter test
     - run: flutter build apk --release
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy to Server
+      run: |
+        echo "Deploying to production..."
+        scp -r build/app/outputs/flutter-apk/app-release.apk user@production-server:/path/to/deploy
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: [build-and-test, deploy]
+    steps:
+    - name: Send Notification
+      run: |
+        curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"Pipeline status: $CI_JOB_STATUS"}' \
+          https://hooks.slack.com/services/your/slack/webhook/url
+
